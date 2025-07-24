@@ -1,4 +1,45 @@
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #001f3f; /* fond bleu nuit type cockpit */
+  color: #FF7F00; /* texte orange Hermès */
+}
 
-body { font-family: sans-serif; padding: 20px; background: #f9f9f9; }
-input, select, button { display: block; margin: 10px 0; padding: 8px; width: 100%; max-width: 400px; }
-h1 { color: #1f2937; }
+h1 {
+  font-size: 20px;
+  text-transform: uppercase;
+  border-bottom: 1px dashed #FF7F00;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+input, select, button {
+  display: block;
+  margin: 10px 0;
+  padding: 8px 10px;
+  background-color: #002b5c;
+  color: #FF7F00;
+  border: 1px solid #FF7F00;
+  width: 100%;
+  max-width: 400px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+button {
+  background-color: #FF7F00;
+  color: #001f3f;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+input::placeholder {
+  color: #FFA64D;
+}
+
+p#resultat {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #00FF00; /* résultat en vert type avion */
+}
