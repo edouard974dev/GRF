@@ -1,0 +1,71 @@
+{
+  "EMB-135": {
+    "CAT I - Flap 22 - No Ice - With Thrust Reverser": {
+      "RWYCC": {
+        "6": {
+          "ref": 1122,
+          "deltaWeight": 58,
+          "deltaAlt": 41,
+          "deltaTemp": 15,
+          "deltaWind": 31,
+          "deltaSlope": 35,
+          "deltaVap": 120
+        },
+        "5": {
+          "ref": 1244,
+          "deltaWeight": 58,
+          "deltaAlt": 41,
+          "deltaTemp": 15,
+          "deltaWind": 31,
+          "deltaSlope": 35,
+          "deltaVap": 120
+        },
+        "4": {
+          "ref": 1357,
+          "deltaWeight": 58,
+          "deltaAlt": 41,
+          "deltaTemp": 15,
+          "deltaWind": 31,
+          "deltaSlope": 35,
+          "deltaVap": 120
+        },
+        "3": {
+          "ref": 1460,
+          "deltaWeight": 58,
+          "deltaAlt": 41,
+          "deltaTemp": 15,
+          "deltaWind": 31,
+          "deltaSlope": 35,
+          "deltaVap": 120
+        },
+        "2": {
+          "ref": 1601,
+          "deltaWeight": 58,
+          "deltaAlt": 41,
+          "deltaTemp": 15,
+          "deltaWind": 31,
+          "deltaSlope": 35,
+          "deltaVap": 120
+        },
+        "1": {
+          "ref": 1783,
+          "deltaWeight": 58,
+          "deltaAlt": 41,
+          "deltaTemp": 15,
+          "deltaWind": 31,
+          "deltaSlope": 35,
+          "deltaVap": 120
+        },
+        "0": {
+          "ref": 1953,
+          "deltaWeight": 58,
+          "deltaAlt": 41,
+          "deltaTemp": 15,
+          "deltaWind": 31,
+          "deltaSlope": 35,
+          "deltaVap": 120
+        }
+      }
+    }
+  }
+}
