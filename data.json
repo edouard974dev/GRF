@@ -1,348 +1,212 @@
-const appJs = \`// Données des tableaux de performance
-const landingData = {
-    'EMB-135': {
-        'with': {
-            'CAT1': {
-                '22': {
-                    'without': {
-                        ref: [1068, 1239, 1357, 1446, 1575, 1721],
-                        weightBelow: [-46, -57, -58, -63, -76, -81],
-                        weightAbove: [47, 59, 59, 64, 79, 83],
-                        alt: [29, 41, 41, 45, 58, 61],
-                        tempBelow: [-11, -15, -15, -16, -19, -19],
-                        tempAbove: [23, 37, 35, 40, 59, 59],
-                        windHead: [-23, -29, -31, -34, -39, -43],
-                        windTail: [107, 160, 143, 161, 237, 228],
-                        slopeUp: [-7, -11, -16, -19, -24, -32],
-                        slopeDown: [170, 209, 214, 238, 317, 362],
-                        vref: [114, 136, 120, 126, 143, 138],
-                        revInop: [129, 515, 515, 606, 1039, 1425],
-                        overweight: 172
-                    },
-                    'with': {
-                        ref: [1145, 1330, 1443, 1534, 1669, 1813],
-                        weightBelow: [-49, -62, -62, -67, -80, -86],
-                        weightAbove: [51, 63, 62, 68, 82, 87],
-                        alt: [32, 45, 43, 48, 62, 64],
-                        tempBelow: [-12, -16, -16, -17, -20, -20],
-                        tempAbove: [26, 40, 38, 43, 63, 63],
-                        windHead: [-23, -30, -32, -34, -40, -44],
-                        windTail: [111, 165, 148, 165, 241, 233],
-                        slopeUp: [-8, -12, -17, -20, -24, -32],
-                        slopeDown: [179, 219, 222, 248, 327, 371],
-                        vref: [103, 115, 105, 106, 117, 114],
-                        revInop: [134, 516, 504, 611, 1065, 1400],
-                        overweight: 176
-                    }
-                },
-                '45': {
-                    'without': {
-                        ref: [1009, 1213, 1328, 1404, 1495, 1637],
-                        weightBelow: [-40, -55, -56, -61, -71, -76],
-                        weightAbove: [41, 54, 55, 60, 70, 75],
-                        alt: [27, 39, 39, 43, 53, 56],
-                        tempBelow: [-10, -14, -14, -15, -18, -18],
-                        tempAbove: [20, 34, 33, 37, 51, 53],
-                        windHead: [-21, -28, -30, -33, -37, -41],
-                        windTail: [94, 151, 140, 157, 217, 218],
-                        slopeUp: [-6, -10, -14, -18, -20, -27],
-                        slopeDown: [102, 139, 149, 169, 222, 273],
-                        vref: [98, 116, 107, 110, 119, 117],
-                        revInop: [84, 380, 364, 497, 935, 1461],
-                        overweight: 150
-                    },
-                    'with': {
-                        ref: [1074, 1288, 1399, 1477, 1571, 1711],
-                        weightBelow: [-43, -58, -60, -64, -74, -80],
-                        weightAbove: [45, 58, 59, 64, 74, 79],
-                        alt: [29, 42, 42, 46, 56, 59],
-                        tempBelow: [-11, -15, -15, -16, -19, -19],
-                        tempAbove: [22, 37, 35, 40, 54, 56],
-                        windHead: [-21, -29, -31, -34, -37, -42],
-                        windTail: [97, 154, 143, 160, 220, 221],
-                        slopeUp: [-6, -11, -15, -18, -20, -28],
-                        slopeDown: [107, 148, 154, 174, 228, 278],
-                        vref: [101, 112, 107, 109, 117, 115],
-                        revInop: [91, 403, 372, 509, 953, 1426],
-                        overweight: 155
-                    }
-                }
-            },
-            'CAT2': {
-                '22': {
-                    'both': {
-                        ref: [1145, 1330, 1442, 1533, 1669, 1813],
-                        weightBelow: [-50, -62, -63, -68, -80, -86],
-                        weightAbove: [51, 63, 62, 67, 81, 86],
-                        alt: [32, 45, 43, 48, 62, 64],
-                        tempBelow: [-12, -16, -16, -17, -20, -20],
-                        tempAbove: [26, 40, 38, 43, 63, 63],
-                        windHead: [-23, -30, -32, -35, -40, -44],
-                        windTail: [112, 165, 147, 165, 241, 233],
-                        slopeUp: [-7, -11, -17, -20, -23, -32],
-                        slopeDown: [179, 218, 223, 248, 327, 371],
-                        vref: [103, 115, 104, 106, 117, 114],
-                        revInop: [134, 516, 504, 611, 1064, 1402],
-                        overweight: 175
-                    }
-                }
-            }
-        },
-        'without': {
-            'CAT1': {
-                '22': {
-                    'without': {
-                        ref: [1159, 1493, 1738, 1979, 2529, 3088],
-                        weightBelow: [-50, -75, -68, -77, -137, -98],
-                        weightAbove: [53, 79, 70, 79, 145, 106],
-                        alt: [31, 52, 45, 52, 94, 75],
-                        tempBelow: [-13, -21, -21, -25, -43, -43],
-                        tempAbove: [24, 42, 35, 41, 77, 65],
-                        windHead: [-26, -39, -43, -51, -81, -96],
-                        windTail: [120, 226, 184, 214, 444, 378],
-                        slopeUp: [-10, -21, -41, -58, -76, -175],
-                        slopeDown: [183, 294, 294, 358, 585, 1028],
-                        vref: [140, 228, 228, 193, 224, 196],
-                        overweight: 208
-                    },
-                    'with': {
-                        ref: [1254, 1636, 1869, 2123, 2741, 3274],
-                        weightBelow: [-55, -83, -74, -83, -147, -107],
-                        weightAbove: [58, 86, 75, 84, 150, 112],
-                        alt: [34, 58, 49, 56, 100, 80],
-                        tempBelow: [-14, -23, -23, -27, -46, -46],
-                        tempAbove: [26, 46, 38, 44, 82, 69],
-                        windHead: [-27, -41, -44, -53, -83, -98],
-                        windTail: [127, 237, 209, 220, 436, 381],
-                        slopeUp: [-12, -24, -44, -62, -85, -182],
-                        slopeDown: [194, 317, 317, 376, 555, 1007],
-                        vref: [129, 190, 177, 168, 220, 195],
-                        overweight: 221
-                    }
-                },
-                '45': {
-                    'without': {
-                        ref: [1071, 1435, 1665, 1859, 2161, 2695],
-                        weightBelow: [-42, -68, -65, -72, -107, -89],
-                        weightAbove: [44, 68, 64, 71, 108, 91],
-                        alt: [28, 47, 43, 49, 75, 66],
-                        tempBelow: [-11, -19, -20, -23, -33, -37],
-                        tempAbove: [21, 37, 33, 38, 61, 56],
-                        windHead: [-23, -37, -41, -48, -64, -85],
-                        windTail: [103, 201, 174, 205, 373, 356],
-                        slopeUp: [-8, -19, -36, -49, -56, -130],
-                        slopeDown: [109, 201, 209, 267, 473, 1072],
-                        vref: [116, 176, 149, 159, 178, 166],
-                        overweight: 185
-                    },
-                    'with': {
-                        ref: [1147, 1545, 1769, 1970, 2298, 2823],
-                        weightBelow: [-46, -74, -70, -77, -114, -95],
-                        weightAbove: [49, 75, 69, 77, 116, 98],
-                        alt: [30, 51, 46, 52, 79, 70],
-                        tempBelow: [-12, -21, -22, -25, -35, -39],
-                        tempAbove: [23, 40, 36, 40, 64, 59],
-                        windHead: [-23, -38, -43, -50, -65, -86],
-                        windTail: [107, 208, 178, 209, 379, 361],
-                        slopeUp: [-9, -21, -38, -52, -60, -133],
-                        slopeDown: [116, 213, 218, 277, 451, 1021],
-                        vref: [121, 175, 150, 159, 173, 149],
-                        overweight: 189
-                    }
-                }
-            },
-            'CAT2': {
-                '22': {
-                    'both': {
-                        ref: [1253, 1635, 1868, 2123, 2740, 3274],
-                        weightBelow: [-56, -84, -75, -84, -148, -108],
-                        weightAbove: [58, 85, 74, 84, 149, 112],
-                        alt: [34, 58, 49, 56, 100, 80],
-                        tempBelow: [-14, -23, -23, -27, -46, -46],
-                        tempAbove: [26, 46, 38, 44, 82, 69],
-                        windHead: [-27, -41, -44, -53, -83, -98],
-                        windTail: [127, 237, 209, 220, 436, 381],
-                        slopeUp: [-12, -24, -44, -62, -84, -181],
-                        slopeDown: [194, 317, 317, 376, 554, 1010],
-                        vref: [129, 190, 177, 168, 220, 195],
-                        overweight: 219
-                    }
-                }
-            }
+{
+  "EMB-135_WITH_REVERSER_CAT1_FLAP_22_WITHOUT_ICE": {
+    "rwycc": {
+      "6": {
+        "ref_distance": 1068,
+        "corrections": {
+          "weight_below": -46,
+          "weight_above": 47,
+          "altitude": 29,
+          "temp_below_isa": 11,
+          "temp_above_isa": 23,
+          "headwind": 23,
+          "tailwind": 107,
+          "uphill": 7,
+          "downhill": 170,
+          "vref_additive": 114,
+          "reverser_inop": 129
         }
+      },
+      "5": {
+        "ref_distance": 1239,
+        "corrections": {
+          "weight_below": -57,
+          "weight_above": 59,
+          "altitude": 41,
+          "temp_below_isa": 15,
+          "temp_above_isa": 37,
+          "headwind": 29,
+          "tailwind": 160,
+          "uphill": 11,
+          "downhill": 209,
+          "vref_additive": 136,
+          "reverser_inop": 515
+        }
+      },
+      "4": {
+        "ref_distance": 1357,
+        "corrections": {
+          "weight_below": -58,
+          "weight_above": 59,
+          "altitude": 41,
+          "temp_below_isa": 15,
+          "temp_above_isa": 35,
+          "headwind": 31,
+          "tailwind": 143,
+          "uphill": 16,
+          "downhill": 214,
+          "vref_additive": 120,
+          "reverser_inop": 515
+        }
+      },
+      "3": {
+        "ref_distance": 1446,
+        "corrections": {
+          "weight_below": -63,
+          "weight_above": 64,
+          "altitude": 45,
+          "temp_below_isa": 16,
+          "temp_above_isa": 40,
+          "headwind": 34,
+          "tailwind": 161,
+          "uphill": 19,
+          "downhill": 238,
+          "vref_additive": 126,
+          "reverser_inop": 606
+        }
+      },
+      "2": {
+        "ref_distance": 1575,
+        "corrections": {
+          "weight_below": -76,
+          "weight_above": 79,
+          "altitude": 58,
+          "temp_below_isa": 19,
+          "temp_above_isa": 59,
+          "headwind": 39,
+          "tailwind": 237,
+          "uphill": 24,
+          "downhill": 317,
+          "vref_additive": 143,
+          "reverser_inop": 1039
+        }
+      },
+      "1": {
+        "ref_distance": 1721,
+        "corrections": {
+          "weight_below": -81,
+          "weight_above": 83,
+          "altitude": 61,
+          "temp_below_isa": 19,
+          "temp_above_isa": 59,
+          "headwind": 43,
+          "tailwind": 228,
+          "uphill": 32,
+          "downhill": 362,
+          "vref_additive": 138,
+          "reverser_inop": 1425
+        }
+      }
     },
-    'EMB-145': {
-        'with': {
-            'CAT1': {
-                '22': {
-                    'without': {
-                        ref: [1068, 1230, 1347, 1437, 1567, 1713],
-                        weightBelow: [-45, -57, -58, -63, -75, -81],
-                        weightAbove: [47, 59, 58, 63, 77, 81],
-                        alt: [32, 44, 43, 47, 63, 64],
-                        tempBelow: [-9, -12, -14, -14, -17, -17],
-                        tempAbove: [25, 39, 36, 42, 63, 62],
-                        windHead: [-21, -26, -29, -31, -38, -39],
-                        windTail: [112, 165, 145, 164, 246, 234],
-                        slopeUp: [-6, -8, -13, -15, -16, -25],
-                        slopeDown: [178, 217, 221, 246, 335, 377],
-                        vref: [119, 140, 126, 128, 147, 141],
-                        revInop: [142, 535, 544, 594, 1011, 1366],
-                        overweight: 92
-                    },
-                    'with': {
-                        ref: [1145, 1321, 1432, 1524, 1661, 1805],
-                        weightBelow: [-49, -61, -62, -67, -80, -85],
-                        weightAbove: [52, 63, 62, 67, 81, 86],
-                        alt: [34, 48, 46, 51, 67, 68],
-                        tempBelow: [-10, -13, -15, -16, -17, -18],
-                        tempAbove: [28, 43, 39, 45, 68, 67],
-                        windHead: [-22, -27, -29, -31, -37, -39],
-                        windTail: [117, 170, 150, 168, 250, 238],
-                        slopeUp: [-6, -9, -13, -16, -22, -25],
-                        slopeDown: [188, 228, 229, 256, 346, 388],
-                        vref: [108, 118, 107, 108, 120, 117],
-                        revInop: [148, 538, 543, 601, 1024, 1337],
-                        overweight: 96
-                    }
-                },
-                '45': {
-                    'without': {
-                        ref: [1009, 1205, 1319, 1396, 1489, 1630],
-                        weightBelow: [-40, -54, -56, -61, -70, -76],
-                        weightAbove: [42, 55, 55, 60, 70, 76],
-                        alt: [28, 42, 41, 45, 57, 59],
-                        tempBelow: [-10, -13, -14, -15, -16, -17],
-                        tempAbove: [22, 36, 35, 39, 54, 56],
-                        windHead: [-20, -26, -28, -30, -34, -37],
-                        windTail: [98, 155, 142, 159, 225, 223],
-                        slopeUp: [-5, -8, -12, -14, -15, -21],
-                        slopeDown: [106, 146, 153, 174, 236, 285],
-                        vref: [103, 119, 109, 113, 122, 120],
-                        revInop: [90, 393, 372, 489, 936, 1365],
-                        overweight: 85
-                    },
-                    'with': {
-                        ref: [1074, 1280, 1390, 1468, 1564, 1704],
-                        weightBelow: [-43, -58, -59, -64, -74, -79],
-                        weightAbove: [45, 58, 58, 63, 74, 79],
-                        alt: [31, 44, 44, 48, 60, 62],
-                        tempBelow: [-10, -13, -15, -16, -17, -18],
-                        tempAbove: [24, 39, 38, 42, 57, 59],
-                        windHead: [-20, -26, -28, -31, -35, -38],
-                        windTail: [102, 159, 144, 162, 229, 226],
-                        slopeUp: [-5, -8, -12, -14, -15, -22],
-                        slopeDown: [112, 151, 158, 180, 241, 294],
-                        vref: [105, 117, 109, 112, 120, 114],
-                        revInop: [99, 417, 393, 500, 900, 1345],
-                        overweight: 88
-                    }
-                }
-            },
-            'CAT2': {
-                '22': {
-                    'both': {
-                        ref: [1145, 1321, 1432, 1523, 1661, 1804],
-                        weightBelow: [-49, -62, -61, -68, -80, -86],
-                        weightAbove: [51, 63, 61, 67, 81, 85],
-                        alt: [34, 48, 46, 51, 67, 68],
-                        tempBelow: [-10, -13, -15, -15, -17, -17],
-                        tempAbove: [28, 43, 40, 45, 68, 67],
-                        windHead: [-22, -27, -29, -31, -37, -39],
-                        windTail: [117, 170, 149, 168, 250, 238],
-                        slopeUp: [-6, -9, -13, -17, -22, -25],
-                        slopeDown: [188, 228, 229, 256, 346, 387],
-                        vref: [107, 118, 106, 108, 120, 117],
-                        revInop: [147, 537, 543, 601, 1023, 1338],
-                        overweight: 96
-                    }
-                }
-            }
-        },
-        'without': {
-            'CAT1': {
-                '22': {
-                    'without': {
-                        ref: [1159, 1472, 1711, 1949, 2498, 3038],
-                        weightBelow: [-49, -73, -68, -76, -134, -96],
-                        weightAbove: [53, 78, 69, 77, 141, 106],
-                        alt: [34, 56, 47, 54, 100, 79],
-                        tempBelow: [-11, -17, -20, -23, -37, -40],
-                        tempAbove: [26, 45, 36, 42, 81, 67],
-                        windHead: [-24, -34, -40, -48, -71, -93],
-                        windTail: [127, 232, 205, 214, 447, 372],
-                        slopeUp: [-9, -15, -34, -49, -53, -159],
-                        slopeDown: [192, 307, 307, 360, 576, 984],
-                        vref: [148, 234, 234, 195, 229, 200],
-                        overweight: 149
-                    },
-                    'with': {
-                        ref: [1254, 1614, 1841, 2091, 2708, 3223],
-                        weightBelow: [-54, -82, -74, -83, -145, -105],
-                        weightAbove: [59, 87, 75, 84, 151, 115],
-                        alt: [37, 62, 51, 58, 106, 85],
-                        tempBelow: [-12, -19, -22, -25, -39, -42],
-                        tempAbove: [29, 49, 39, 45, 86, 71],
-                        windHead: [-25, -36, -41, -49, -78, -95],
-                        windTail: [135, 243, 233, 220, 422, 378],
-                        slopeUp: [-10, -17, -37, -52, -59, -165],
-                        slopeDown: [205, 331, 331, 379, 586, 953],
-                        vref: [137, 194, 189, 169, 225, 199],
-                        overweight: 161
-                    }
-                },
-                '45': {
-                    'without': {
-                        ref: [1071, 1417, 1642, 1834, 2138, 2658],
-                        weightBelow: [-42, -68, -65, -71, -107, -88],
-                        weightAbove: [46, 69, 64, 71, 110, 93],
-                        alt: [30, 51, 45, 51, 80, 71],
-                        tempBelow: [-11, -16, -20, -22, -27, -33],
-                        tempAbove: [22, 40, 35, 39, 64, 58],
-                        windHead: [-22, -33, -38, -45, -56, -83],
-                        windTail: [107, 206, 174, 204, 380, 352],
-                        slopeUp: [-7, -14, -30, -41, -43, -118],
-                        slopeDown: [115, 209, 211, 268, 460, 975],
-                        vref: [121, 180, 161, 161, 182, 155],
-                        overweight: 120
-                    },
-                    'with': {
-                        ref: [1147, 1526, 1745, 1944, 2274, 2785],
-                        weightBelow: [-46, -74, -69, -76, -114, -94],
-                        weightAbove: [49, 75, 69, 76, 116, 99],
-                        alt: [32, 55, 49, 54, 85, 74],
-                        tempBelow: [-11, -18, -21, -24, -29, -34],
-                        tempAbove: [24, 43, 37, 42, 68, 61],
-                        windHead: [-22, -34, -39, -46, -60, -84],
-                        windTail: [112, 213, 178, 209, 386, 358],
-                        slopeUp: [-8, -16, -32, -43, -46, -121],
-                        slopeDown: [121, 222, 221, 278, 428, 958],
-                        vref: [127, 179, 179, 161, 163, 153],
-                        overweight: 125
-                    }
-                }
-            },
-            'CAT2': {
-                '22': {
-                    'both': {
-                        ref: [1253, 1613, 1840, 2091, 2707, 3222],
-                        weightBelow: [-54, -82, -75, -84, -145, -105],
-                        weightAbove: [58, 86, 74, 83, 150, 113],
-                        alt: [37, 62, 51, 58, 106, 85],
-                        tempBelow: [-12, -19, -20, -24, -39, -42],
-                        tempAbove: [29, 49, 39, 45, 86, 71],
-                        windHead: [-25, -36, -41, -49, -78, -95],
-                        windTail: [134, 243, 232, 220, 422, 378],
-                        slopeUp: [-10, -17, -37, -52, -59, -165],
-                        slopeDown: [204, 331, 331, 378, 586, 953],
-                        vref: [136, 194, 189, 169, 224, 198],
-                        overweight: 159
-                    }
-                }
-            }
+    "overweight_correction": 172
+  },
+  "EMB-135_WITH_REVERSER_CAT1_FLAP_22_WITH_ICE": {
+    "rwycc": {
+      "6": {
+        "ref_distance": 1145,
+        "corrections": {
+          "weight_below": -49,
+          "weight_above": 51,
+          "altitude": 32,
+          "temp_below_isa": 12,
+          "temp_above_isa": 26,
+          "headwind": 23,
+          "tailwind": 111,
+          "uphill": 8,
+          "downhill": 179,
+          "vref_additive": 103,
+          "reverser_inop": 134
         }
-    }
-};
-
-const rwyccLabels = ['6 (DRY)', '5 (GOOD)', '4 (GOOD TO MEDIUM)', '3 (MEDIUM)', '2 (MEDIUM TO POOR)', '1 (POOR)'];
-const rwyccClasses = ['rwycc-6', 'rwycc-5', 'rwycc-4', 'rwycc-3', 'rwycc-2', 'rwycc-1'];
+      },
+      "5": {
+        "ref_distance": 1330,
+        "corrections": {
+          "weight_below": -62,
+          "weight_above": 63,
+          "altitude": 45,
+          "temp_below_isa": 16,
+          "temp_above_isa": 40,
+          "headwind": 30,
+          "tailwind": 165,
+          "uphill": 12,
+          "downhill": 219,
+          "vref_additive": 115,
+          "reverser_inop": 516
+        }
+      },
+      "4": {
+        "ref_distance": 1443,
+        "corrections": {
+          "weight_below": -62,
+          "weight_above": 62,
+          "altitude": 43,
+          "temp_below_isa": 16,
+          "temp_above_isa": 38,
+          "headwind": 32,
+          "tailwind": 148,
+          "uphill": 17,
+          "downhill": 222,
+          "vref_additive": 105,
+          "reverser_inop": 504
+        }
+      },
+      "3": {
+        "ref_distance": 1534,
+        "corrections": {
+          "weight_below": -67,
+          "weight_above": 68,
+          "altitude": 48,
+          "temp_below_isa": 17,
+          "temp_above_isa": 43,
+          "headwind": 34,
+          "tailwind": 165,
+          "uphill": 20,
+          "downhill": 248,
+          "vref_additive": 106,
+          "reverser_inop": 611
+        }
+      },
+      "2": {
+        "ref_distance": 1669,
+        "corrections": {
+          "weight_below": -80,
+          "weight_above": 82,
+          "altitude": 62,
+          "temp_below_isa": 20,
+          "temp_above_isa": 63,
+          "headwind": 40,
+          "tailwind": 241,
+          "uphill": 24,
+          "downhill": 327,
+          "vref_additive": 117,
+          "reverser_inop": 1065
+        }
+      },
+      "1": {
+        "ref_distance": 1813,
+        "corrections": {
+          "weight_below": -86,
+          "weight_above": 87,
+          "altitude": 64,
+          "temp_below_isa": 20,
+          "temp_above_isa": 63,
+          "headwind": 44,
+          "tailwind": 233,
+          "uphill": 32,
+          "downhill": 371,
+          "vref_additive": 114,
+          "reverser_inop": 1400
+        }
+      }
+    },
+    "overweight_correction": 176
+  },
+  "EMB-135_WITH_REVERSER_CAT1_FLAP_45_WITHOUT_ICE": {
+    "rwycc": {
+      "6": {
+        "ref_distance": 1009,
+        "corrections": {
+          "weight_below": -40,
+          "weight_above": 41,
+          "altitude": 27,
+          "temp
